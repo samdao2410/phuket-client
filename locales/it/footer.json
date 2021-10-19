@@ -1,0 +1,18 @@
+{
+  "404": {
+    "title": "Oops,, <br/> il tuo link non è corretto",
+    "desc": "Il link che hai cliccato è scaduto o non è corretto. Riprova o inizia ad esplorare una delle pagine seguenti",
+    "link1": "Dai uno sguardo a Mishima",
+    "link2": "Galleria di Mishima",
+    "link3": "Chi siamo"
+  },
+  "subscribe": "Iscriviti",
+  "t&c": "Termini e Condizioni",
+  "technology": "Tecnologia",
+  "aboutUs": "Chi siamo",
+  "contact": "Contatti",
+  "privacyPolicy": "Politica sulla privacy",
+  "faqs": "FAQs",
+  "news": "News",
+  "press": "Stampa"
+}

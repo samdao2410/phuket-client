@@ -1,0 +1,46 @@
+{
+  "env": {
+      "node": true,
+      "es2021": true,
+      "browser": true
+  },
+  "globals": {
+      "process": true,
+      "React": "writable"
+    },
+  "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+  ],
+  "parserOptions": {
+      "ecmaFeatures": {
+          "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+  },
+  "plugins": [
+      "react",
+      "prettier"
+  ],
+  "rules": {
+      "no-useless-escape": ["off"],
+      "prettier/prettier": ["warn", {}, { "usePrettierrc": true }],
+      "react/prop-types": "off",
+      "no-console": "warn",
+      "no-unused-vars": ["warn", { "varsIgnorePattern": "^_" }],
+      "linebreak-style": [
+          "warn",
+          "unix"
+      ],
+      "react/display-name": "off",
+      "quotes": [
+          "warn",
+          "single"
+      ],
+      "semi": [
+          "warn",
+          "always"
+      ]
+  }
+}

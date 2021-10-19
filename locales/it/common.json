@@ -1,0 +1,17 @@
+{
+  "h1": "A simple example",
+  "error-with-status": "A {{statusCode}} error occurred on server",
+  "title": "Home | mishima",
+  "product": {
+    "version": "Version:",
+    "white": "Villabalzana",
+    "brown": "Luv-A-Bull Walnut",
+    "blue": "Rooftop",
+    "black": "Luv-A-Bull Black"
+  },
+  "AR": {
+    "scan": "scan me",
+    "description": "Scan this QR code with your phone to view the <span class='font-medium'>{{label}} Mishima</span> in your space",
+    "action": "Tap to try"
+  }
+}

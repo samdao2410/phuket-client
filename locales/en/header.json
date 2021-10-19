@@ -1,0 +1,34 @@
+{
+  "product": "Product",
+  "gallery": "Gallery",
+  "materials": "Materials",
+  "press": "Press",
+  "signup": "Sign up",
+  "login": "Login",
+  "signin": "Sign In",
+  "account": "ACCOUNT",
+  "studio": "studio",
+  "language": {
+    "en": "English",
+    "jp": "日本語",
+    "fr": "Français",
+    "de": "Deutsch",
+    "nl": "Nederlands",
+    "it": "Italiano",
+    "zh": "中文",
+    "ko": "한국어",
+    "ar": "عَرَبِيّ",
+    "es": "Español"
+  },
+  "countdown": {
+    "title": "Final unveiling <span class='font-semibold'>May 26th, 2021</span>.",
+    "desc1": "Each week we unveil new photos and specifications so don’t miss out.",
+    "desc2": "Sign up now for exclusive access and a one-time special discount.",
+    "button": "GET ON THE LIST"
+  },
+  "promotion": {
+    "text1": "Be one of the first",
+    "text2": "500.",
+    "text3": "Be on the list."
+  }
+}
