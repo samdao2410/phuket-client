@@ -1,6 +1,7 @@
 const { i18n } = require('./next-i18next.config');
+const withTypescript = require('@zeit/next-typescript');
 
-module.exports = {
+module.exports = withTypescript({
   distDir: 'build',
   i18n,
   images: {},
@@ -15,6 +16,6 @@ module.exports = {
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Important: return the modified config
-    return config
-  },
-};
+    return config;
+  }
+});
