@@ -1,13 +1,10 @@
-import { useEffect } from 'react';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 import { Footer } from './styled';
 
-const FooterComponent = () => {
+const FooterComponent = () : JSX.Element => {
   const { t } = useTranslation('footer');
-
   return (
     <>
       <Footer>
@@ -18,7 +15,7 @@ const FooterComponent = () => {
                 <a>{t('press')}</a>
               </Link> */}
               <Link href="/contact-us">
-                <a>{t('contact')}</a>
+                <a>{t('contact')}123123</a>
               </Link>
               <Link href="/term-conditions">
                 <a>{t('t&c')}</a>

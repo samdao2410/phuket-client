@@ -5,7 +5,7 @@ import { Select } from 'antd';
 
 const { Option } = Select;
 
-const HeaderComponent = () => {
+const HeaderComponent = () : JSX.Element => {
   const { t } = useTranslation('header');
   const router = useRouter();
   const { pathname, asPath } = router;
@@ -23,7 +23,7 @@ const HeaderComponent = () => {
     // es: `${t('language.es')} (ES)`
   };
 
-  const onChange = (val) => {
+  const onChange = (val : string) => {
     router.push(pathname, asPath, {
       locale: val
     });
@@ -37,7 +37,7 @@ const HeaderComponent = () => {
           placeholder="Select language"
           optionFilterProp="children"
           onChange={onChange}
-          filterOption={(input, option) =>
+          filterOption={(input, option : any) =>
             option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
           }>
           {Object.keys(langs).map((item) => (
