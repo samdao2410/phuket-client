@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'next-i18next';
+
 export default function Home() {
   const { t } = useTranslation('home');
   return (
