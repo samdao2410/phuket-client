@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'jp', 'it'],
+    locales: ['en', 'zh', 'vn'],
     domains: [
       // {
       //   domain: 'jp.domain.com',
