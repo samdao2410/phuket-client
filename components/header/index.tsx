@@ -19,28 +19,28 @@ const HeaderComponent = (): JSX.Element => {
 
   const langs = {
     en: `${t('language.en')}`,
-    jp: `${t('language.jp')}`,
-    it: `${t('language.it')}`
+    vn: `${t('language.vn')}`,
+    zh: `${t('language.zh')}`
   };
 
-  const onChange = (val: string) => {
-    router.push(pathname, asPath, {
-      locale: val
-    });
-  };
+
   const onClickLang = ({ key }) => {
-   console.log(key);
+    router.push(pathname, asPath, {
+      locale: key
+    });
   };
   const menu = (
     <Menu onClick={onClickLang} className='language-select'>
       {
         Object.keys(langs).map(key => (
-          <Menu.Item key={key}>{langs[key]}</Menu.Item>
+          <Menu.Item key={key}><span><img src={`/images/header/icon-${key}.svg`} /></span>{langs[key]}</Menu.Item>
 
         ))
       }
     </Menu>
   );
+
+  
   return (
     <>
       <Header className='clearfix'>
@@ -50,7 +50,10 @@ const HeaderComponent = (): JSX.Element => {
             <p className='logo'><img src='/images/header/sabasports.svg' /></p>
             <div className="header-auth-provider">
               <Dropdown trigger={['click']} overlay={menu} className='languages-box'>
-                <p className='language-active'><span><img src={`/images/header/icon-${locale}.svg`} /></span>{langs[lang]}</p>
+                <p className='language-active'>
+                  <span><img src={`/images/header/icon-${locale}.svg`} /></span>
+                  {langs[locale]}
+                </p>
               </Dropdown>
               <div className='search'>
                 <input />

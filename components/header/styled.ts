@@ -3,7 +3,9 @@ import styled from 'styled-components';
 export const Header = styled.div`
   background: red;
   width: 100%;
+  
   .header-controls {
+    min-height: 70px;
     padding: 0.8rem 0;
     border-bottom: 1px solid #e5e5e5;
     position: relative;
@@ -32,6 +34,7 @@ export const Header = styled.div`
         display: inline-block;
       }
       img {
+        min-width: 22px;
         width: 22px;
         height: 22px;
       }
