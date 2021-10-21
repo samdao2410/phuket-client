@@ -40,14 +40,15 @@ const HeaderComponent = (): JSX.Element => {
     </Menu>
   );
 
-  
+
   return (
     <>
       <Header className='clearfix'>
-        <div className='container'>
-          <div className='header-controls'>
+        <div className='header-controls'>
+          <div className='container'>
             <a href='#' className='banner'><img /><img src='/images/header/Desktop_320x70.png' /></a>
             <p className='logo'><img src='/images/header/sabasports.svg' /></p>
+            {/* right header control */}
             <div className="header-auth-provider">
               <Dropdown trigger={['click']} overlay={menu} className='languages-box'>
                 <p className='language-active'>
@@ -56,11 +57,12 @@ const HeaderComponent = (): JSX.Element => {
                 </p>
               </Dropdown>
               <div className='search'>
-                <input />
+                <input placeholder='' />
                 <SearchOutlined />
               </div>
-              <p>Đăng nhập</p>
+              <p>{t('login')}</p>
             </div>
+            {/* right header control */}
           </div>
 
         </div>

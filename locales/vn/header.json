@@ -1,17 +1,10 @@
 {
-  "product": "Prodotto",
-  "gallery": "Galleria",
-  "materials": "Materiale",
-  "press": "Stampa",
-  "signup": "Sign up",
-  "login": "Login",
-  "signin": "Sign In",
-  "account": "ACCOUNT",
+  
   "language": {
     "en": "English",
     "jp": "日本語",
     "fr": "Français",
-    "vn": "Vietnamese",
+    "vn": "Việt Nam",
     "de": "Deutsch",
     "nl": "Nederlands",
     "it": "Italiano",
@@ -20,15 +13,14 @@
     "ar": "عَرَبِيّ",
     "es": "Español"
   },
-  "countdown": {
-    "title": "Final unveiling <span class='font-semibold'>May 26th, 2021</span>.",
-    "desc1": "Each week we unveil new photos and specifications so don’t miss out.",
-    "desc2": "Sign up now for exclusive access and a one-time special discount.",
-    "button": "GET ON THE LIST"
-  },
-  "promotion": {
-    "text1": "Sii uno dei primi",
-    "text2": "500.",
-    "text3": "Mettiti In Fila."
-  }
+  "search": "Tìm kiếm...",
+  "login": "Đăng nhập",
+  "football": "Bóng đá",
+  "identify": "Nhận định",
+  "backstage": "Hậu trường",
+  "transfer": "Chuyển nhượng",
+  "other_subject": "Các môn khác",
+  "schedule": "Lịch thi đấu",
+  "video": "Video",
+  "warning": "Cảnh báo"
 }
