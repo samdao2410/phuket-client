@@ -150,7 +150,17 @@ export const ItemOneThird = styled(Item)`
 `;
 
 export const Footer = styled.div`
-background: #B0A99F;
+  background-color: #081224;
+  border-top: 4px solid #f12f19;
+  padding: 3.6rem 0;
+  position: relative;
+  margin-top: auto;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 0 10rem;
 .footer-text {
   font-size: 12px;
   line-height: 18px;
@@ -337,4 +347,12 @@ margin: 0 !important;
       box-shadow: none;
     }
 }
+`
+export const LeftInfor = styled.div`
+
+`
+export const RightInfor = styled.div`
+  svg {
+    margin-top: -3px
+  }
 `
