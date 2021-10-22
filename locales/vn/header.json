@@ -1,4 +1,5 @@
 {
+  
   "language": {
     "en": "English",
     "jp": "日本語",
@@ -12,14 +13,14 @@
     "ar": "عَرَبِيّ",
     "es": "Español"
   },
-  "search": "Search...",
-  "login": "Login",
-  "football": "Football",
-  "identify": "Identify",
-  "backstage": "Backstage",
-  "transfer": "Transfer",
-  "other_subject": "Others",
-  "schedule": "Schedule",
+  "search": "Tìm kiếm...",
+  "login": "Đăng nhập",
+  "football": "Bóng đá",
+  "identify": "Nhận định",
+  "backstage": "Hậu trường",
+  "transfer": "Chuyển nhượng",
+  "other_subject": "Các môn khác",
+  "schedule": "Lịch thi đấu",
   "video": "Video",
-  "warning": "Warning"
+  "warning": "Cảnh báo"
 }
