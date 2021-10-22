@@ -120,7 +120,7 @@ const HeaderComponent = (): JSX.Element => {
         </div>
         {/* header-controls  */}
         {/* top-header */}
-        <WrapperAffix isMobile={isMobile} offsetTop={0}>
+        <WrapperAffix isMobile={false} offsetTop={0}>
           <div
             className={cn('top-header', {
               active: menu
