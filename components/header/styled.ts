@@ -7,6 +7,9 @@ export const Header = styled.div`
   .logo {
     max-width: 104px;
   }
+  .ant-affix {
+    background: #fffdf9;
+  }
   .button-mobile {
     width: 22px;
     height: 16px;

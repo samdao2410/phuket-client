@@ -11,7 +11,7 @@ export interface WrapperAffix {
 
 const WrapperAffix = ({ isMobile, children, active, offsetTop }: WrapperAffix): JSX.Element => (
   <>
-    {isMobile ? (
+  {!isMobile ? (
       <Affix
         offsetTop={offsetTop}
         className={cn('affix-main', { active })}
