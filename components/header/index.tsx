@@ -20,7 +20,8 @@ const HeaderComponent = (): JSX.Element => {
   const langs = {
     en: `${t('language.en')}`,
     vn: `${t('language.vn')}`,
-    zh: `${t('language.zh')}`
+    zh: `${t('language.zh')}`,
+    th: `${t('language.th')}`,
   };
 
   const onClickLang = ({ key }) => {
