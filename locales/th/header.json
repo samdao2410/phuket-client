@@ -1,0 +1,26 @@
+{
+  "language": {
+    "en": "English",
+    "jp": "日本語",
+    "fr": "Français",
+    "vn": "Việt Nam",
+    "de": "Deutsch",
+    "nl": "Nederlands",
+    "it": "Italiano",
+    "zh": "中文",
+    "th": "Thailand",
+    "ko": "한국어",
+    "ar": "عَرَبِيّ",
+    "es": "Español"
+  },
+  "search": "ค้นหา...",
+  "login": "เข้าสู่ระบบ",
+  "football": "ฟุตบอล",
+  "identify": "แยกแยะ",
+  "backstage": "หลังเวที",
+  "transfer": "โอนย้าย",
+  "other_subject": "คนอื่น",
+  "schedule": "กำหนดการ",
+  "video": "วีดีโอ",
+  "warning": "คำเตือน"
+}

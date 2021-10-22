@@ -1,0 +1,18 @@
+{
+  "404": {
+    "title": "Whoops, <br/> your link is not correct",
+    "desc": "The link you’re followed is eitheir expired or not correct. You can try again or start exploring one of the following pages",
+    "link1": "A look at Mishima",
+    "link2": "Mishima Gallery",
+    "link3": "About us"
+  },
+  "subscribe": "Subscribe",
+  "t&c": "terms & conditions",
+  "technology": "Technology",
+  "aboutUs": "About us",
+  "contact": "Contact",
+  "privacyPolicy": "Privacy Policy",
+  "faqs": "FAQs",
+  "news": "News",
+  "press": "Press"
+}
