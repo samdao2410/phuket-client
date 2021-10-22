@@ -35,10 +35,14 @@ body {
   font-family: Arial,sans-serif;
   color: #4f4f4f;
   font-weight: 400;
+  background: #fffdf9;
   font-size: 1rem;
   overscroll-behavior: none;
 }
-
+main {
+  background: #fffdf9;
+  height: 5000px;
+}
 .container {
   max-width: 1140px;
 }
@@ -95,4 +99,23 @@ ul {
   background: none;
   max-width: 448px;
   margin:  0 auto;
+}
+.dropdown-header {
+  top: 56px !important;
+}
+.dropdown-header .ant-dropdown-menu{
+  min-width: 120px;
+  box-shadow: 0 0 5px rgb(0 0 0 / 30%);
+  background: #fff;
+  border-radius: 4px;
+}
+.dropdown-header .ant-dropdown-menu .ant-dropdown-menu-item{ 
+  padding: 6px 8px;
+}
+.dropdown-header .ant-dropdown-menu .ant-dropdown-menu-title-content { 
+  display: flex;
+}
+.dropdown-header .ant-dropdown-menu .ant-dropdown-menu-title-content span img{ 
+  width: 22px;
+  margin-right: 5px;
 }
