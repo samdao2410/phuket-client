@@ -2,18 +2,21 @@ import React from 'react';
 import { Header } from './styled';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-import { Dropdown, Menu, Affix } from 'antd';
+import { Dropdown, Menu } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import ActiveLink from 'components/common/ActiveLink';
-
+import useWindowDimensions from 'utils/useWindowDimensions';
+import WrapperAffix from '../common/WrapperAffix';
+import cn from 'classnames';
 
 const HeaderComponent = (): JSX.Element => {
   const { t } = useTranslation('header');
   const router = useRouter();
-  const [lang, setLang] = React.useState('en');
-  const [showLang, setShowLang] = React.useState(false);
   const { pathname, asPath, locale } = router;
+  const { width }: any = useWindowDimensions();
+  const [menu, setMenu] = React.useState(false);
 
+  const isMobile = width < 1024;
   const langs = {
     en: `${t('language.en')}`,
     vn: `${t('language.vn')}`,
@@ -25,7 +28,12 @@ const HeaderComponent = (): JSX.Element => {
       locale: key
     });
   };
-  const menu = (
+
+  const handleClickMenu = () => {
+    setMenu(!menu);
+  };
+
+  const MenuCPN = (
     <Menu onClick={onClickLang} className="language-select">
       {Object.keys(langs).map((key) => (
         <Menu.Item key={key}>
@@ -38,33 +46,73 @@ const HeaderComponent = (): JSX.Element => {
     </Menu>
   );
 
+  const Search = () => (
+    <>
+      {' '}
+      <div className="search">
+        <input placeholder={t('search')} />
+        <SearchOutlined />
+      </div>
+    </>
+  );
+
+  const HamburgerMenu = () => (
+    <>
+      <div
+        onClick={handleClickMenu}
+        className={cn('button-mobile', {
+          active: menu
+        })}>
+        <span className="line-mb"></span>
+        <span className="line-mb"></span>
+        <span className="line-mb"></span>
+      </div>
+    </>
+  );
+
+  React.useEffect(() => {
+    const body = document.getElementsByTagName('body');
+    if (menu) {
+      body[0].style.overflow = 'hidden';
+    } else {
+      body[0].style.overflow = 'auto';
+    }
+  }, [menu]);
+
   return (
     <>
       <Header className="clearfix">
         {/* header-controls */}
         <div className="header-controls">
           <div className="container">
-            <a href="#" className="banner">
-              <img />
-              <img src="/images/header/Desktop_320x70.png" />
-            </a>
+            {!isMobile && (
+              <a href="#" className="banner">
+                <img />
+                <img src="/images/header/Desktop_320x70.png" />
+              </a>
+            )}
+
+            {isMobile && <HamburgerMenu />}
             <p className="logo">
               <img src="/images/header/sabasports.svg" />
             </p>
+
             {/* right header control */}
             <div className="header-auth-provider">
-              <Dropdown overlayClassName="dropdown-header" trigger={['click']} overlay={menu} className="languages-box">
+              <Dropdown
+                overlayClassName="dropdown-header"
+                trigger={['click']}
+                overlay={MenuCPN}
+                className="languages-box">
                 <p className="language-active">
                   <span>
                     <img src={`/images/header/icon-${locale}.svg`} />
                   </span>
-                  {langs[locale]}
+                  <span className="country">{langs[locale]}</span>
                 </p>
               </Dropdown>
-              <div className="search">
-                <input placeholder="" />
-                <SearchOutlined />
-              </div>
+              {!isMobile && <Search />}
+
               <p className="login">{t('login')}</p>
             </div>
             {/* right header control */}
@@ -72,40 +120,48 @@ const HeaderComponent = (): JSX.Element => {
         </div>
         {/* header-controls  */}
         {/* top-header */}
-        <Affix offsetTop={0}>
-          <div className="top-header">
-            <div className="container">
+        <WrapperAffix isMobile={false} offsetTop={0}>
+          <div
+            className={cn('top-header', {
+              active: menu
+            })}>
+            <div onClick={handleClickMenu} className="over"></div>
+            <div className="container top-mobile">
+              {isMobile && menu && <HamburgerMenu />}
+              {isMobile && <Search />}
+
               <ul className="main-menu">
                 <li className="menu-item">
-                  <ActiveLink href={"/football"}>{t('football')}</ActiveLink>
+                  <ActiveLink href={'/football'}>{t('football')}</ActiveLink>
                 </li>
                 <li className="menu-item">
-                  <ActiveLink href={"/identify"}>{t('identify')}</ActiveLink>
-                  <span><img src='/images/header/man.png' /></span>
+                  <ActiveLink href={'/identify'}>{t('identify')}</ActiveLink>
+                  <span>
+                    <img src="/images/header/man.png" />
+                  </span>
                 </li>
                 <li className="menu-item">
-                  <ActiveLink href={"/backstage"}>{t('backstage')}</ActiveLink>
+                  <ActiveLink href={'/backstage'}>{t('backstage')}</ActiveLink>
                 </li>
                 <li className="menu-item">
-                  <ActiveLink href={"/transfer"}>{t('transfer')}</ActiveLink>
+                  <ActiveLink href={'/transfer'}>{t('transfer')}</ActiveLink>
                 </li>
                 <li className="menu-item">
-                  <ActiveLink href={"/others"}>{t('other_subject')}</ActiveLink>
+                  <ActiveLink href={'/others'}>{t('other_subject')}</ActiveLink>
                 </li>
                 <li className="menu-item">
-                  <ActiveLink href={"/schedule"}>{t('schedule')}</ActiveLink>
+                  <ActiveLink href={'/schedule'}>{t('schedule')}</ActiveLink>
                 </li>
                 <li className="menu-item">
-                  <ActiveLink href={"/video"}>{t('video')}</ActiveLink>
+                  <ActiveLink href={'/video'}>{t('video')}</ActiveLink>
                 </li>
                 <li className="menu-item">
-                  <ActiveLink href={"/warning"}>{t('warning')}</ActiveLink>
+                  <ActiveLink href={'/warning'}>{t('warning')}</ActiveLink>
                 </li>
               </ul>
-
             </div>
           </div>
-        </Affix>
+        </WrapperAffix>
         {/* top-header */}
       </Header>
     </>
@@ -113,4 +169,3 @@ const HeaderComponent = (): JSX.Element => {
 };
 
 export default HeaderComponent;
-

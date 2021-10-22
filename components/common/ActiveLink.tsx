@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 interface ActiveLink {
   href: string,
-  as: string | any,
-  className: string,
+  as?: string | any,
+  className?: string,
   children: JSX.Element
 }
 

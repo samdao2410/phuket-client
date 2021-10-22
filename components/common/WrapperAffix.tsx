@@ -3,15 +3,17 @@ import cn from 'classnames';
 
 export interface WrapperAffix {
 
-  isMobile: boolean,
-  children: JSX.Element,
-  active: boolean
+  isMobile: boolean;
+  children: JSX.Element;
+  active?: boolean;
+  offsetTop: number;
 }
 
-export const WrapperAffix = ({ isMobile, children, active }: WrapperAffix): JSX.Element => (
+const WrapperAffix = ({ isMobile, children, active, offsetTop }: WrapperAffix): JSX.Element => (
   <>
     {isMobile ? (
       <Affix
+        offsetTop={offsetTop}
         className={cn('affix-main', { active })}
       >
         {children}
@@ -21,3 +23,5 @@ export const WrapperAffix = ({ isMobile, children, active }: WrapperAffix): JSX.
     )}
   </>
 );
+
+export default WrapperAffix;
