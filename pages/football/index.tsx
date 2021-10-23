@@ -1,15 +1,17 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next'
-import HomeCpn from 'components/page/Home';
 import { SEO } from 'components/SEO';
 import { useTranslation } from 'next-i18next';
+import FootBallPage from '../../components/page/football';
 
 const Home = () => {
-  const {t} = useTranslation('football');
+  const { t } = useTranslation('football');
   return (
     <>
       <SEO title={t('seo.title')} description={t('seo.description')} url={t('seo.url')}></SEO>
-      <main className="bg-white"><HomeCpn /></main>
+      <main className="">
+        <FootBallPage />
+      </main>
     </>
   );
 };

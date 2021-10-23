@@ -2,10 +2,11 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 interface ActiveLink {
-  href: string,
-  as?: string | any,
-  className?: string,
-  children: JSX.Element
+  href: string;
+  as?: string | any;
+  className?: string;
+  children: JSX.Element;
+  colorActive?: string;
 }
 
 const ActiveLink = (props: ActiveLink) => {
@@ -13,7 +14,7 @@ const ActiveLink = (props: ActiveLink) => {
 
   const className =
     asPath === props?.href || asPath === props?.as || asPath.includes(props?.href)
-      ? `${props?.className} active`.trim()
+      ? `${props?.className} ${props.colorActive}  active`.trim()
       : props?.className;
 
   return (
