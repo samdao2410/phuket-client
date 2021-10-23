@@ -69,7 +69,7 @@ module.exports = {
         'black-transparent': 'rgba(0, 0, 0, 0.1)',
         gray: '#d4d4d4',
         'gray-200': '#e8eaef',
-        'gray-400': '#A5A5A4',
+        'gray-400': '#828282',
         'gray-600': '#f2f2f0',
         brown: '#DDD6CE',
         'brown-200': '#726D65',
