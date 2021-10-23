@@ -2,7 +2,11 @@ import React from 'react';
 import RightDetail from './RightDetail';
 import LeftDetail from './LeftDetail';
 
-function FootBallPage() {
+interface FootBallPageType {
+  typePage?: string | undefined | any
+}
+
+function FootBallPage({ typePage }: FootBallPageType) {
   return (
     <div className="container pt-6 pb-10">
       <div className="grid grid-cols-12 gap-4">

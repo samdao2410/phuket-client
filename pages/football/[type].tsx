@@ -1,20 +1,19 @@
-import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { SEO } from 'components/SEO';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
+import FootBallPage from '../../components/page/football';
 
-const ConfirmationPage = () => {
+const TypeFootBall = () => {
   const { t } = useTranslation('football');
   const router = useRouter();
   const { type } = router.query;
-
-
   return (
     <>
       <SEO title={t('seo.title')} description={t('seo.description')} url={t('seo.url')}></SEO>
-      <div className="bg-brown-400 h-screen flex justify-center items-center">
-        <h1 className="mt-6 text-4.75xl font-normal text-brown-200 font-cormorant uppercase text-center">{t('most_view')}</h1>
-      </div>
+      <main className="">
+        <FootBallPage typePage={type || ''} />
+      </main>
     </>
   );
 };
@@ -26,4 +25,4 @@ export const getServerSideProps = async ({ locale }) => {
   return { props };
 };
 
-export default ConfirmationPage;
+export default TypeFootBall;
