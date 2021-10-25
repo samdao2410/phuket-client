@@ -1,0 +1,26 @@
+{
+  "language": {
+    "en": "English",
+    "jp": "日本語",
+    "fr": "Français",
+    "vn": "Việt Nam",
+    "de": "Deutsch",
+    "nl": "Nederlands",
+    "it": "Italiano",
+    "zh": "中文",
+    "th": "Thailand",
+    "ko": "한국어",
+    "ar": "عَرَبِيّ",
+    "es": "Español"
+  },
+  "search": "Search...",
+  "login": "Login",
+  "football": "Football",
+  "identify": "Identify",
+  "backstage": "Backstage",
+  "transfer": "Transfer",
+  "other_subject": "Others",
+  "schedule": "Schedule",
+  "video": "Video",
+  "warning": "Warning"
+}

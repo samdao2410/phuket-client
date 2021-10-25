@@ -1,0 +1,27 @@
+{
+  
+  "language": {
+    "en": "English",
+    "jp": "日本語",
+    "fr": "Français",
+    "vn": "Việt Nam",
+    "de": "Deutsch",
+    "nl": "Nederlands",
+    "it": "Italiano",
+    "zh": "中文",
+    "th": "Thailand",
+    "ko": "한국어",
+    "ar": "عَرَبِيّ",
+    "es": "Español"
+  },
+  "search": "Tìm kiếm...",
+  "login": "Đăng nhập",
+  "football": "Bóng đá",
+  "identify": "Nhận định",
+  "backstage": "Hậu trường",
+  "transfer": "Chuyển nhượng",
+  "other_subject": "Các môn khác",
+  "schedule": "Lịch thi đấu",
+  "video": "Video",
+  "warning": "Cảnh báo"
+}
