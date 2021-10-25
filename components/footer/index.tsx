@@ -1,4 +1,3 @@
-import { useTranslation } from 'next-i18next';
 import {
   FacebookOutlined,
   YoutubeOutlined
@@ -7,7 +6,7 @@ import {
 import { Footer, LeftInfor, RightInfor } from './styled';
 
 const FooterComponent = (): JSX.Element => {
-  const { t } = useTranslation('footer');
+  // const { t } = useTranslation('footer');
   return (
     <>
       <Footer>

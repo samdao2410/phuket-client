@@ -3,6 +3,15 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    borderWidth: {
+      0: '0',
+      1: '1px',
+      2: '2px',
+      3: '3px',
+      4: '4px',
+      6: '6px',
+      8: '8px'
+    },
     minWidth: {
       0: '0',
       '1/4': '25%',
@@ -46,7 +55,7 @@ module.exports = {
     extend: {
       colors: {
         primary: '#b0a99f',
-        dark: '#001714',
+        dark: '#333',
         light: '#F2F2F0',
         'light-opacity-200': 'rgba(246, 246, 244, 0.5)',
         'light-radial-gradient':
@@ -58,9 +67,9 @@ module.exports = {
         'black-opacity': 'rgba(29, 29, 27, 0.9)',
         'black-opacity-200': 'rgba(29, 29, 27, 0.4)',
         'black-transparent': 'rgba(0, 0, 0, 0.1)',
-        gray: '#4A4A49',
-        'gray-200': '#D2D2D1',
-        'gray-400': '#A5A5A4',
+        gray: '#d4d4d4',
+        'gray-200': '#e8eaef',
+        'gray-400': '#828282',
         'gray-600': '#f2f2f0',
         brown: '#DDD6CE',
         'brown-200': '#726D65',
@@ -82,7 +91,7 @@ module.exports = {
         'white-400': '#f6f6f4',
         blue: '#37507E',
         'blue-200': '#bfdcdf',
-        red: '#BC4646',
+        red: '#f12f19',
         'red-200': '#DD3838',
         'red-300': '#E44000',
         purple: '#5F377E',

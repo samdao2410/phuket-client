@@ -11,12 +11,12 @@ import cn from 'classnames';
 
 const HeaderComponent = (): JSX.Element => {
   const { t } = useTranslation('header');
-  const router = useRouter();
+  const router : any = useRouter();
   const { pathname, asPath, locale } = router;
   const { width }: any = useWindowDimensions();
   const [menu, setMenu] = React.useState(false);
 
-  const isMobile = width < 1024;
+  const isMobile = width < 1025;
   const langs = {
     en: `${t('language.en')}`,
     vn: `${t('language.vn')}`,

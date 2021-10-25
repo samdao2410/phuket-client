@@ -118,3 +118,9 @@ ul {
   width: 22px;
   margin-right: 5px;
 }
+
+@media only screen and (max-width: 1024px) {
+  main {
+    margin-top: 70px;
+  }
+}
