@@ -7,6 +7,7 @@ export const HoverBtn = styled.div`
   padding-bottom: 6px;
   margin-right: 30px;
   a {
+    text-transform: capitalize;
     &.active {
       &::before {
         width: 100%;

@@ -4,17 +4,15 @@ import ActiveLink from 'components/common/ActiveLink';
 import { HoverBtn } from './styled';
 import Link from 'next/link';
 import moment from 'moment';
+import { Skeleton } from 'antd';
+import { useGetPosts } from 'utils/useGetPosts';
 
 
-var data = [...Array(5).keys()];
-
-interface LeftDetailITF {
-  posts: any[];
-}
-function LeftDetail({ posts }: LeftDetailITF) {
+function LeftDetail() {
   const { t } = useTranslation('football');
+  const { posts, loading, hightLight }: any = useGetPosts();
+  const listPost  = posts.filter(item => item.id !== hightLight?.id);
 
-  const hightLight = posts[0];
   return (
     <div className="md:border-r-1 border-gray md:pr-8">
       <h2 className="text-red text-xl border-l-3 font-bold uppercase leading-6 pl-1.5 mb-4">
@@ -35,42 +33,57 @@ function LeftDetail({ posts }: LeftDetailITF) {
         </HoverBtn>
       </div>
       {/* MENU */}
-      {/* HightLight */}
-      <div className="grid grid-cols-12 my-5">
-        <div className="col-span-12 md:col-span-7">
-          <Link href="/">
-            <img className="hover:scale-50" src="/images/van-toan.jpg" />
-          </Link>
-        </div>
-        <div className="col-span-12 md:col-span-5 p-4 bg-gray-200">
-          <h3 className="text-base md:text-xl font-bold hover:text-red">
-            <Link href="/"><>{hightLight?.title?.rendered}</></Link>
-          </h3>
-          <div
-            dangerouslySetInnerHTML={{ __html: hightLight?.excerpt?.rendered }}
-            className="text-sm my-1">
-          </div>
-          <p className="text-xs text-gray-400">{moment(hightLight?.date).fromNow()}</p>
-        </div>
-      </div>
-      {/* HightLight */}
-      {/* List Post */}
-      {posts && posts.map((item) => (
-        <div key={item?.id} className="grid grid-cols-12 pb-4 mb-4 border-b-1 border-gray">
-          <div className="col-span-4">
-            <img src="/images/ronado.jpg" />
-          </div>
-          <div className="col-span-8 pl-3">
-            <h4 className="text-base font-bold hover:text-red">
-              <Link href="/"><a>{item?.title?.rendered}</a></Link>
-            </h4>
-            <div dangerouslySetInnerHTML={{ __html: item?.excerpt?.rendered }} className="hidden md:block text-sm mb-2">
-            
+      {(posts && posts.length > 0) || loading ? (
+        <>
+          {' '}
+          {/* HightLight */}
+          <Skeleton loading={loading}>
+            <div className="grid grid-cols-12 my-5">
+              <div className="col-span-12 md:col-span-7">
+                <Link href="/">
+                  <img className="hover:scale-50" src="/images/van-toan.jpg" />
+                </Link>
+              </div>
+              <div className="col-span-12 md:col-span-5 p-4 bg-gray-200">
+                <h3 className="text-base md:text-xl font-bold hover:text-red">
+                  <Link href="/">
+                    <>{hightLight?.title?.rendered}</>
+                  </Link>
+                </h3>
+                <div
+                  dangerouslySetInnerHTML={{ __html: hightLight?.excerpt?.rendered }}
+                  className="text-sm my-1"></div>
+                <p className="text-xs text-gray-400">{moment(hightLight?.date).fromNow()}</p>
+              </div>
             </div>
-            <p className="text-xs text-gray-400">{moment(item?.date).fromNow()}</p>
-          </div>
-        </div>
-      ))}
+          </Skeleton>
+          {/* HightLight */}
+          {/* List Post */}
+          {}
+          <Skeleton loading={loading}>
+            {listPost.map((item) => (
+              <div key={item?.id} className="grid grid-cols-12 pb-4 mb-4 border-b-1 border-gray">
+                <div className="col-span-4">
+                  <img src="/images/ronado.jpg" />
+                </div>
+                <div className="col-span-8 pl-3">
+                  <h4 className="text-base font-bold hover:text-red">
+                    <Link href="/">
+                      <a>{item?.title?.rendered}</a>
+                    </Link>
+                  </h4>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: item?.excerpt?.rendered }}
+                    className="hidden md:block text-sm mb-2"></div>
+                  <p className="text-xs text-gray-400">{moment(item?.date).fromNow()}</p>
+                </div>
+              </div>
+            ))}
+          </Skeleton>
+        </>
+      ) : (
+        <><p className='mt-5 text-base text-gray-400'>{t('no_post')}</p></>
+      )}
 
       {/* List Post */}
     </div>
