@@ -160,7 +160,7 @@ export const Footer = styled.div`
   justify-content: space-between;
   align-items: center;
   color: white;
-  padding: 0 10rem;
+  padding: 0 15rem;
 .footer-text {
   font-size: 12px;
   line-height: 18px;
