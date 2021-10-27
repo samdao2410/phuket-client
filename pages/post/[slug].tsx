@@ -2,15 +2,15 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { SEO } from 'components/SEO';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-import FootBallPage from '../../components/page/football';
+import PostDetailPage from '../../components/page/post-detail';
 
-const TypeFootBall = () => {
-  const { t } = useTranslation('football');
+const PostDetail = () => {
+  const { t } = useTranslation('post');
   return (
     <>
       <SEO title={t('seo.title')} description={t('seo.description')} url={t('seo.url')}></SEO>
       <main className="">
-        <FootBallPage />
+        <PostDetailPage />
       </main>
     </>
   );
@@ -18,9 +18,9 @@ const TypeFootBall = () => {
 
 export const getServerSideProps = async ({ locale }) => {
   const props = {
-    ...(await serverSideTranslations(locale, ['header', 'footer', 'football']))
+    ...(await serverSideTranslations(locale, ['header', 'footer', 'post']))
   };
   return { props };
 };
 
-export default TypeFootBall;
+export default PostDetail;
