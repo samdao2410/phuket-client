@@ -42,11 +42,13 @@ export const PostStore = ({ children }): JSX.Element => {
 
       // post detail
       if (slug_post) {
-        const resultPostDetail = await API.get('/wordpress-popular-posts/v1/popular-posts/');
+        const resultPostDetail = await API_V2.get(`/posts?include[]=${slug_post}`);
         const postDetail = resultPostDetail.data;
         setPostDetail(postDetail[0]);
-        setLoading(false);
       }
+
+      // finally
+      setLoading(false);
     })();
   }, [router]);
   return (
