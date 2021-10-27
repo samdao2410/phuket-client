@@ -9,7 +9,7 @@ import { usePosts } from 'store/usePosts';
 
 
 function LeftDetail() {
-  const { t } = useTranslation('football');
+  const { t } = useTranslation('post');
   const { posts, loading, hightLight }: any = usePosts();
   const listPost  = posts.filter(item => item.id !== hightLight?.id);
 

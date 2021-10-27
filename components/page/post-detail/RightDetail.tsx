@@ -6,7 +6,7 @@ import { usePosts } from 'store/usePosts';
 import moment from 'moment';
 
 function RightDetail() {
-  const { t } = useTranslation('football');
+  const { t } = useTranslation('post');
   const { postPopular, loading, hightLightPop }: any = usePosts();
   const listPost = postPopular.filter((item) => item.id !== hightLightPop?.id);
   return (
