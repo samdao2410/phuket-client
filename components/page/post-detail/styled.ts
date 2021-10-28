@@ -1,36 +1,49 @@
 import styled from 'styled-components';
 
-export const HoverBtn = styled.div`
-  position: relative;
-  font-size: 14px;
-  font-weight: bold;
-  padding-bottom: 6px;
-  margin-right: 30px;
-  a {
-    text-transform: capitalize;
-    &.active {
-      &::before {
-        width: 100%;
-        opacity: 1;
-      }
+export const BackBtn = styled.div`
+    width: 32px;
+    height: 32px;
+    border: 1px solid #929291;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.25s;
+    svg {
+      color: #929291;
     }
-
     &:hover {
-      color: #f12f19;
-      &::before {
-        width: 100%;
-        opacity: 1;
+      background: #076db6;
+      border-color: #076db6;
+      svg {
+      fill: #fff;
+    }
+    }
+`;
+
+export const ListIcon = styled.div`
+  p{
+    margin-bottom: 15px;
+    &:hover {
+      cursor: pointer;
+      svg {
+        fill: #076db6;
       }
     }
-    &::before {
-      content: '';
-      opacity: 0;
-      bottom: 0;
-      height: 2px;
-      width: 0%;
-      background: #f12f19;
-      position: absolute;
-      transition: all ease-in-out 0.25s;
+  }
+  .face {
+    svg {
+      font-size: 20px;
+    }
+  }
+  .link {
+    border-bottom: 1px solid #929291;
+    padding-bottom: 10px;
+    width: 38px;
+    text-align: center;
+    svg {
+      font-size: 20px;
     }
   }
 `;
