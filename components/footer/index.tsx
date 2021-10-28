@@ -2,14 +2,21 @@ import {
   FacebookOutlined,
   YoutubeOutlined
 } from '@ant-design/icons';
+import { useRouter } from 'next/router';
 
 import { Footer, LeftInfor, RightInfor } from './styled';
+import cn from 'classnames';
 
 const FooterComponent = (): JSX.Element => {
   // const { t } = useTranslation('footer');
+  const router = useRouter();
+  const isPostDetail = router.pathname === '/post/[slug]';
+  
   return (
     <>
-      <Footer>
+      <Footer className={cn('', {
+        isPostDetail: isPostDetail
+      })}>
         <LeftInfor>
           © 2021 Bản quyền thuộc về Saba Sports
         </LeftInfor>
