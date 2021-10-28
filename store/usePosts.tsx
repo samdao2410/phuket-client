@@ -12,6 +12,8 @@ export const PostStore = ({ children }): JSX.Element => {
   const [hightLight, setHighLight] = React.useState([]);
   const [hightLightPop, setHighLightPop] = React.useState([]);
   const [postDetail, setPostDetail] = React.useState({});
+  const [postViewMore, setPostViewMore] = React.useState([]);
+  const [tags, setTags] = React.useState([]);
 
   const router: any = useRouter();
   const asPath = router?.asPath;
@@ -44,6 +46,12 @@ export const PostStore = ({ children }): JSX.Element => {
       if (slug_post) {
         const resultPostDetail = await API_V2.get(`/posts?include[]=${slug_post}`);
         const postDetail = resultPostDetail.data;
+        const dataPostViewMore = await API_V2.get(`/posts`);
+        const resulTags = await API_V2.get(`/tags`);
+        const posts = await API_V2.get(`/posts`);
+        setPosts(posts?.data);
+        setTags(resulTags?.data)
+        setPostViewMore(dataPostViewMore.data);
         setPostDetail(postDetail[0]);
       }
 
@@ -59,7 +67,9 @@ export const PostStore = ({ children }): JSX.Element => {
         postPopular,
         hightLight,
         postDetail,
-        hightLightPop
+        hightLightPop,
+        postViewMore,
+        tags
       }}>
       {children}
     </PostContext.Provider>

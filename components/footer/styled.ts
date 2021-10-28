@@ -215,6 +215,16 @@ export const Footer = styled.div`
   a {
     font-size: 0.875rem;
   }
+  @media only screen and (max-width: 767px) {
+    /* display: none; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    &.isPostDetail {
+      margin-bottom: 53px;
+    }
+  }
 `;
 
 export const StyledModal = styled(Modal)`
@@ -349,7 +359,9 @@ margin: 0 !important;
 }
 `
 export const LeftInfor = styled.div`
-
+@media only screen and (max-width: 767px) {
+  margin-bottom: 7px;
+}
 `
 export const RightInfor = styled.div`
   svg {

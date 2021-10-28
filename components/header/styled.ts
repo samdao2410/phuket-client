@@ -165,13 +165,14 @@ export const Header = styled.div`
 
   /* top-header */
   @media only screen and (max-width: 1024px) {
-    z-index: 2;
+    z-index: 100;
     .header-controls {
       position: fixed;
       top: 0;
       z-index: 1;
       width: 100%;
       background: #fffdf9;
+      box-shadow: 1px -3px 10px #bfbebe;
       .container {
         justify-content: center;
       }

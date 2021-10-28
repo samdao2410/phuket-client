@@ -91,9 +91,11 @@ module.exports = {
         'white-400': '#f6f6f4',
         blue: '#37507E',
         'blue-200': '#bfdcdf',
+        'blue-400': '#0000EE',
         red: '#f12f19',
         'red-200': '#DD3838',
         'red-300': '#E44000',
+        'red-400': '#eb5342',
         purple: '#5F377E',
         green: {
           a: '#088366'
