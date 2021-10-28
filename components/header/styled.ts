@@ -165,7 +165,7 @@ export const Header = styled.div`
 
   /* top-header */
   @media only screen and (max-width: 1024px) {
-    z-index: 2;
+    z-index: 100;
     .header-controls {
       position: fixed;
       top: 0;

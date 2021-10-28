@@ -99,9 +99,13 @@ export const ListIcon = styled.div`
     }
   }
   @media only screen and (max-width: 767px) {
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
     &.active {
-      display: flex;
-      position: fixed;
+      visibility: visible;
+      opacity: 1;
       flex-direction: row !important;
       background: #fff;
       width: 100%;

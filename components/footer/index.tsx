@@ -10,7 +10,7 @@ import cn from 'classnames';
 const FooterComponent = (): JSX.Element => {
   // const { t } = useTranslation('footer');
   const router = useRouter();
-  const isPostDetail = router.pathname === '/post/[slug]';
+  const isPostDetail = router?.pathname === '/post/[slug]';
   
   return (
     <>
