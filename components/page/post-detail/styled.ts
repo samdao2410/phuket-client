@@ -4,7 +4,7 @@ export const SavePost = styled.div`
   border: 1px solid #929291;
   display: flex;
   border-radius: 5px;
-  min-width: 86px;
+  min-width: 100px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -20,7 +20,7 @@ export const SavePost = styled.div`
   span {
     margin-left: 5px;
     display: inline-block;
-    font-size: 15px;
+    font-size: 14px;
   }
 `;
 export const BackBtn = styled.div`
@@ -70,6 +70,9 @@ export const ListIconShare = styled.div`
 `;
 
 export const ListIcon = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   p {
     margin-bottom: 15px;
     transition: all 0.25s;
@@ -93,6 +96,79 @@ export const ListIcon = styled.div`
     text-align: center;
     svg {
       font-size: 20px;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    &.active {
+      display: flex;
+      position: fixed;
+      flex-direction: row !important;
+      background: #fff;
+      width: 100%;
+      box-shadow: 1px -3px 10px #bfbebe;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      .back {
+        margin-left: 8px;
+      }
+      p {
+        width: 32px;
+        height: 32px;
+        border: 1px solid #929291;
+        margin: 0 10px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        &.link {
+          width: 32px;
+          height: 32px;
+          padding-bottom: 0;
+        }
+
+        &.save {
+          svg {
+            position: relative;
+            right: -1px;
+          }
+        }
+        svg {
+          width: 18px;
+        }
+      }
+    }
+  }
+`;
+
+export const InputForm = styled.div`
+  .ant-form-item {
+    flex-direction: column;
+    .ant-form-item-label {
+      text-align: left;
+      label {
+        font-size: 17px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        span {
+          font-weight: normal;
+          font-size: 15px;
+          display: inline-block;
+          margin-left: 3px;
+        }
+        &:after {
+          display: none !important;
+        }
+      }
+    }
+    .ant-input {
+      height: 58px;
+      border-radius: 3px;
+      padding-top: 8px;
+      border: 1px solid #bdbdbd !important;
     }
   }
 `;

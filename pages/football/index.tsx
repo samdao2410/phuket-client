@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       <SEO title={t('seo.title')} description={t('seo.description')} url={t('seo.url')}></SEO>
-      <main className="">
+      <main className="w-full">
         <FootBallPage />
       </main>
     </>

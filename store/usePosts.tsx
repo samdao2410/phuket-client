@@ -46,11 +46,12 @@ export const PostStore = ({ children }): JSX.Element => {
       if (slug_post) {
         const resultPostDetail = await API_V2.get(`/posts?include[]=${slug_post}`);
         const postDetail = resultPostDetail.data;
-        const dataPostVM = await API_V2.get(`/posts`);
+        const dataPostViewMore = await API_V2.get(`/posts`);
         const resulTags = await API_V2.get(`/tags`);
-
+        const posts = await API_V2.get(`/posts`);
+        setPosts(posts?.data);
         setTags(resulTags?.data)
-        setPostViewMore(dataPostVM.data);
+        setPostViewMore(dataPostViewMore.data);
         setPostDetail(postDetail[0]);
       }
 

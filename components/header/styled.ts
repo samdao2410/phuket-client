@@ -172,6 +172,7 @@ export const Header = styled.div`
       z-index: 1;
       width: 100%;
       background: #fffdf9;
+      box-shadow: 1px -3px 10px #bfbebe;
       .container {
         justify-content: center;
       }
