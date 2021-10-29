@@ -73,8 +73,8 @@ function LeftDetail() {
               {/* Post Detail */}
               <h2 className="text-2.5xl font-bold tracking-tight">{postDetail?.title?.rendered}</h2>
               <p className="text-gray-400 text-sm">
-                {moment(postDetail.date).format('dddd')}{' '}
-                {moment(postDetail.date).format('DD/MM/YYY, HH:mm')}
+                {moment(postDetail?.date).format('dddd')}{' '}
+                {moment(postDetail?.date).format('DD/MM/YYY, HH:mm')}
               </p>
               <div
                 className="text-lg mt-7"

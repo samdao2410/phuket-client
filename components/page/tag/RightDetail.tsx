@@ -6,13 +6,13 @@ import { usePosts } from 'store/usePosts';
 import moment from 'moment';
 
 function RightDetail() {
-  const { t } = useTranslation('post');
+  const { t } = useTranslation('tag');
   const { postPopular, loading, hightLightPop }: any = usePosts();
-  const listPost = postPopular?.filter((item) => item.id !== hightLightPop?.id);
+  const listPost = postPopular.filter((item) => item.id !== hightLightPop?.id);
   return (
     <div className="md:pl-4 md:sticky md:top-20">
       <h2 className="text-red text-xl border-l-3 font-bold uppercase leading-6 pl-1.5">
-        <Link href="/football">{t('most_view')}</Link>
+       {t('new_post')}
       </h2>
       {(postPopular && postPopular.length > 0) || loading ? (
         <>
