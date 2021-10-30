@@ -9,6 +9,7 @@ export const PostStore = ({ children }): JSX.Element => {
   const [posts, setPosts] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
   const [postPopular, setPostPopular] = React.useState([]);
+  const [postTag, setPostTag] = React.useState([]);
   const [hightLight, setHighLight] = React.useState([]);
   const [hightLightPop, setHighLightPop] = React.useState([]);
   const [postDetail, setPostDetail] = React.useState({});
@@ -19,6 +20,8 @@ export const PostStore = ({ children }): JSX.Element => {
   const asPath = router?.asPath;
   const locale = router.locale;
   const slug_post = router?.query?.slug;
+  const isPostTag = router?.pathname === '/tag/[slug]';
+  const isPostDetail = router?.pathname === '/post/[slug]';
 
   React.useEffect(() => {
     (async () => {
@@ -43,7 +46,7 @@ export const PostStore = ({ children }): JSX.Element => {
       setPostPopular(dataPopular);
 
       // post detail
-      if (slug_post) {
+      if (slug_post && isPostDetail) {
         const resultPostDetail = await API_V2.get(`/posts?include[]=${slug_post}`);
         const postDetail = resultPostDetail.data;
         const dataPostViewMore = await API_V2.get(`/posts`);
@@ -53,6 +56,12 @@ export const PostStore = ({ children }): JSX.Element => {
         setTags(resulTags?.data)
         setPostViewMore(dataPostViewMore.data);
         setPostDetail(postDetail[0]);
+      }
+
+      // Post Tag 
+      if (slug_post && isPostTag) {
+        const postTags = await API_V2.get(`/posts?tags=${slug_post}`);
+        setPostTag(postTags?.data)
       }
 
       // finally
@@ -69,6 +78,7 @@ export const PostStore = ({ children }): JSX.Element => {
         postDetail,
         hightLightPop,
         postViewMore,
+        postTag,
         tags
       }}>
       {children}

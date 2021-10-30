@@ -1,38 +1,24 @@
 import React from 'react';
 import { useTranslation } from 'next-i18next';
 import ActiveLink from 'components/common/ActiveLink';
-import { HoverBtn } from './styled';
 import Link from 'next/link';
 import moment from 'moment';
 import { Skeleton } from 'antd';
 import { usePosts } from 'store/usePosts';
 
 function LeftDetail() {
-  const { t } = useTranslation('football');
-  const { posts, loading, hightLight }: any = usePosts();
-  const listPost = posts?.filter((item) => item.id !== hightLight?.id);
+  const { t } = useTranslation('tag');
+  const {  loading, postTag }: any = usePosts();
+  const hightLight = postTag[0];
+  const listPost = postTag?.filter((item) => item.id !== hightLight?.id);
+  
 
   return (
     <div className="md:border-r-1 border-gray md:pr-8">
       <h2 className="text-red text-xl border-l-3 font-bold uppercase leading-6 pl-1.5 mb-4">
-        <ActiveLink href="/football">{t('football')}</ActiveLink>
+        {t('tag')}
       </h2>
-      {/* MENU */}
-      <div className="flex border-b-1 border-gray">
-        {' '}
-        <HoverBtn>
-          <ActiveLink colorActive="text-red" href="/football/domestically">
-            {t('domestically')}
-          </ActiveLink>
-        </HoverBtn>
-        <HoverBtn>
-          <ActiveLink colorActive="text-red" href="/football/international">
-            {t('international')}
-          </ActiveLink>
-        </HoverBtn>
-      </div>
-      {/* MENU */}
-      {(posts && posts.length > 0) || loading ? (
+      {(postTag && postTag.length > 0) || loading ? (
         <>
           {' '}
           {/* HightLight */}

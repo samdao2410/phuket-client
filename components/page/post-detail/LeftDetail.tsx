@@ -73,8 +73,8 @@ function LeftDetail() {
               {/* Post Detail */}
               <h2 className="text-2.5xl font-bold tracking-tight">{postDetail?.title?.rendered}</h2>
               <p className="text-gray-400 text-sm">
-                {moment(postDetail.date).format('dddd')}{' '}
-                {moment(postDetail.date).format('DD/MM/YYY, HH:mm')}
+                {moment(postDetail?.date).format('dddd')}{' '}
+                {moment(postDetail?.date).format('DD/MM/YYY, HH:mm')}
               </p>
               <div
                 className="text-lg mt-7"
@@ -86,7 +86,7 @@ function LeftDetail() {
                 <ul className="pl-4">
                   {view_more.map((item) => (
                     <li key={item.id}>
-                      <Link href={`/post/${item.id}`}>
+                      <Link href={`/post/${item?.id}`}>
                         <a className="text-blue-400 underline text-lg my-1 block">
                           {item?.title?.rendered}
                         </a>
@@ -168,13 +168,13 @@ function LeftDetail() {
                     key={item?.id}
                     className="grid grid-cols-12 pb-4 mb-4 border-b-1 border-gray">
                     <div className="col-span-4">
-                      <Link href={`/post/${item.id}`}>
+                      <Link href={`/post/${item?.id}`}>
                         <img className="cursor-pointer" src="/images/ronado.jpg" />
                       </Link>
                     </div>
                     <div className="col-span-8 pl-3">
                       <h4 className="text-base font-bold hover:text-red">
-                        <Link href={`/post/${item.id}`}>
+                        <Link href={`/post/${item?.id}`}>
                           <a>{item?.title?.rendered}</a>
                         </Link>
                       </h4>
