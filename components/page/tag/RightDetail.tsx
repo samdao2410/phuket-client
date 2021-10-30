@@ -14,7 +14,7 @@ function RightDetail() {
       <h2 className="text-red text-xl border-l-3 font-bold uppercase leading-6 pl-1.5">
        {t('new_post')}
       </h2>
-      {(postPopular && postPopular.length > 0) || loading ? (
+      {(postPopular && postPopular?.length > 0) || loading ? (
         <>
           {/* HightLight */}
           <Skeleton loading={loading}>

@@ -39,12 +39,12 @@ function LeftDetail() {
           <Skeleton loading={loading}>
             <div className="grid grid-cols-12 my-5">
               <div className="col-span-12 md:col-span-7">
-                <Link href={`/post/${hightLight.id}`}>
+                <Link href={`/post/${hightLight?.id}`}>
                   <img className="hover:scale-50 cursor-pointer" src="/images/van-toan.jpg" />
                 </Link>
               </div>
               <div className="col-span-12 md:col-span-5 p-4 bg-gray-200">
-                <Link href={`/post/${hightLight.id}`}>
+                <Link href={`/post/${hightLight?.id}`}>
                   <h3 className="text-base cursor-pointer md:text-xl font-bold hover:text-red">
                     <>{hightLight?.title?.rendered}</>
                   </h3>
@@ -63,13 +63,13 @@ function LeftDetail() {
             {listPost.map((item) => (
               <div key={item?.id} className="grid grid-cols-12 pb-4 mb-4 border-b-1 border-gray">
                 <div className="col-span-4">
-                  <Link href={`/post/${item.id}`}>
+                  <Link href={`/post/${item?.id}`}>
                     <img className="cursor-pointer" src="/images/ronado.jpg" />
                   </Link>
                 </div>
                 <div className="col-span-8 pl-3">
                   <h4 className="text-base font-bold hover:text-red">
-                    <Link href={`/post/${item.id}`}>
+                    <Link href={`/post/${item?.id}`}>
                       <a>{item?.title?.rendered}</a>
                     </Link>
                   </h4>
