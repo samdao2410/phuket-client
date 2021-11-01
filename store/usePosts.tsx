@@ -29,6 +29,7 @@ export const PostStore = ({ children }): JSX.Element => {
       let id;
       id = ID_CATEGORIES[locale][asPath];
 
+
       // list posts
       if (id) {
         const result = await API_V2.get(`/posts?categories=${id}`);
