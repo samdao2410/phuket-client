@@ -72,7 +72,8 @@ export const ListIconShare = styled.div`
 export const ListIcon = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
+  align-items: center;
   p {
     margin-bottom: 15px;
     transition: all 0.25s;
