@@ -1,5 +1,6 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import { GetStaticProps } from 'next'
 
 const Custom500 = () => {
   const { t } = useTranslation('common');
@@ -7,10 +8,14 @@ const Custom500 = () => {
   return <div></div>;
 };
 
-export const getStaticProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ["common", "header", "footer"])),
-  },
-});
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  let _locale: string | undefined = locale || '';
+  const temp = await serverSideTranslations(_locale, ['header', 'footer', 'common']);
+  return {
+    props: {
+      ...temp
+    }
+  };
+};
 
 export default Custom500;

@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       <SEO title={t('seo.title')} description={t('seo.description')} url={t('seo.url')}></SEO>
-      <main className="">
+      <main className="w-full">
         <FootBallPage />
       </main>
     </>
@@ -18,7 +18,7 @@ const Home = () => {
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   let _locale: string | undefined = locale || '';
-  const temp = await serverSideTranslations(_locale, ['header', 'footer', 'football']);
+  const temp = await serverSideTranslations(_locale, ['common','header', 'footer', 'football']);
   return {
     props: {
       ...temp

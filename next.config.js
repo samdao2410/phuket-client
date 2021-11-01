@@ -1,21 +1,13 @@
 const { i18n } = require('./next-i18next.config');
-const withTypescript = require('@zeit/next-typescript');
 
-module.exports = withTypescript({
-  distDir: 'build',
+module.exports = {
   i18n,
-  images: {},
-  async redirects() {
-    return [
-      {
-        source: '/404',
-        destination: '/',
-        permanent: true
-      }
-    ];
-  },
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    // Important: return the modified config
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"]
+    });
+
     return config;
   }
-});
+}

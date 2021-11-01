@@ -8,10 +8,11 @@ import ActiveLink from 'components/common/ActiveLink';
 import useWindowDimensions from 'utils/useWindowDimensions';
 import WrapperAffix from '../common/WrapperAffix';
 import cn from 'classnames';
+import Link from 'next/link';
 
 const HeaderComponent = (): JSX.Element => {
   const { t } = useTranslation('header');
-  const router : any = useRouter();
+  const router: any = useRouter();
   const { pathname, asPath, locale } = router;
   const { width }: any = useWindowDimensions();
   const [menu, setMenu] = React.useState(false);
@@ -21,7 +22,7 @@ const HeaderComponent = (): JSX.Element => {
     en: `${t('language.en')}`,
     vn: `${t('language.vn')}`,
     zh: `${t('language.zh')}`,
-    th: `${t('language.th')}`,
+    th: `${t('language.th')}`
   };
 
   const onClickLang = ({ key }) => {
@@ -94,9 +95,11 @@ const HeaderComponent = (): JSX.Element => {
             )}
 
             {isMobile && <HamburgerMenu />}
-            <p className="logo">
-              <img src="/images/header/sabasports.svg" />
-            </p>
+            <Link href="/">
+              <p className="logo">
+                <img src="/images/header/sabasports.svg" />
+              </p>
+            </Link>
 
             {/* right header control */}
             <div className="header-auth-provider">
